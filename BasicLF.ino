@@ -1,6 +1,6 @@
 /*
  * Basic code for Arduino based Line Follower with 2 sensors. 
- * Initialization on 25/2/16
+ * Follows a black line on a white surface.  
  * Author: Jayesh Saraf
  */
 
