@@ -12,44 +12,38 @@ const int RmotorF = 10;
 const int RmotorB = 11;
 
 void setup()
-{ PinMode(Lsensor,INPUT);
-  PinMode(Rsensor,INPUT);
-  PinMode(LmotorF,OUTPUT);
-  PinMode(LmotorB,OUTPUT);
-  PinMode(RmotorF,OUTPUT);
-  PinMode(RmotorB,OUTPUT);
+{ pinMode(Lsensor,INPUT);
+  pinMode(Rsensor,INPUT);
+  pinMode(LmotorF,OUTPUT);
+  pinMode(LmotorB,OUTPUT);
+  pinMode(RmotorF,OUTPUT);
+  pinMode(RmotorB,OUTPUT);
 }
 
 void loop()
-{ if(DigitalRead(Lsensor) == HIGH && DigitalRead(Rsensor) == LOW)          //When left sensor is on the black line. 
-    { DigitalWrite(LmotorF,LOW);
-      DigitalWrite(LmotorB,HIGH);
-      DigitalWrite(RmotorF,HIGH);
-      DigitalWrite(RmotorB,LOW);
+{ if(digitalRead(Lsensor) == HIGH && digitalRead(Rsensor) == LOW)          //When left sensor is on the black line. 
+    { digitalWrite(LmotorF,LOW);
+      digitalWrite(LmotorB,HIGH);
+      digitalWrite(RmotorF,HIGH);
+      digitalWrite(RmotorB,LOW);
     }
    
-  else if(DigitalRead(Lsensor) == LOW && DigitalRead(Rsensor) == HIGH)      //When right sensor is on the black line. 
-    { DigitalWrite(LmotorF,HIGH);
-      DigitalWrite(LmotorB,LOW);
-      DigitalWrite(RmotorF,LOW);
-      DigitalWrite(RmotorB,HIGH);
+  else if(digitalRead(Lsensor) == LOW && digitalRead(Rsensor) == HIGH)      //When right sensor is on the black line. 
+    { digitalWrite(LmotorF,HIGH);
+      digitalWrite(LmotorB,LOW);
+      digitalWrite(RmotorF,LOW);
+      digitalWrite(RmotorB,HIGH);
     }
     
-  else if(DigitalRead(Lsensor) == LOW && DigitalRead(Rsensor) == LOW)        //None of the sensors are on the black line.
-    { DigitalWrite(LmotorF,HIGH); 
-      DigitalWrite(LmotorB,LOW);
-      DigitalWrite(RmotorF,HIGH);
-      DigitalWrite(RmotorB,LOW);
+  else if(digitalRead(Lsensor) == LOW && digitalRead(Rsensor) == LOW)        //None of the sensors are on the black line.
+    { digitalWrite(LmotorF,HIGH); 
+      digitalWrite(LmotorB,LOW);
+      digitalWrite(RmotorF,HIGH);
+      digitalWrite(RmotorB,LOW);
     }
   
   else
-    { DigitalWrite(LmotorF,LOW); 
-      DigitalWrite(LmotorB,LOW);
-      DigitalWrite(RmotorF,LOW);
-      DigitalWrite(RmotorB,LOW);
-    }
-}    
-    
-    
-    
-    
+    { digitalWrite(LmotorF,LOW); 
+      digitalWrite(LmotorB,LOW);
+      digitalWrite(RmotorF,LOW);
+      digitalWrite(RmotorB,LOW);
