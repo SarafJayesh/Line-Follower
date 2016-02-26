@@ -47,3 +47,5 @@ void loop()
       digitalWrite(LmotorB,LOW);
       digitalWrite(RmotorF,LOW);
       digitalWrite(RmotorB,LOW);
+    }
+}
